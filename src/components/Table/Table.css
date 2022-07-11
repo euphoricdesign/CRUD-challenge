@@ -1,14 +1,43 @@
-table {
+.table-container {
   border-collapse: collapse;
-  background: rgba(255,255,255,0.1);
+  background: #fff;
   margin: 0 auto;
   text-align: center;
-  border-left: 3px solid #B592A0;
-  color: white;
+  border-radius: 10px;
+  /* box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%); */
+  overflow: auto;
+
 }
 thead {
-  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  background: #7161EF;
+  font-size: 15px;
+  font-weight: 400;
+}
+tbody {
+  font-weight: 400;
+  color: #6c6d6e;
+  font-size: 14px;
+}
+th {
+  font-weight: 400;
 }
 th,td {
   padding: 18px;
+}     
+
+.table-container::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+  border-radius: 50px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #957FEF;
+  border-radius: 50px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #7161EF;
+  border-radius: 50px;
 }

@@ -1,8 +1,20 @@
-body {
-  background: rgba(0,0,0,0.9);
-  font-family: 'Open Sans', sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  background: rgb(240, 235, 243);
+  font-family: 'Lato', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
+
+.App {
+  overflow: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+button:active { outline: none; border: none; }
