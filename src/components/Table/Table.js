@@ -96,7 +96,7 @@ const Table = () => {
       {
         loading ? (
           <div className="loader">
-            <SpinnerDotted color="#7161EF" />
+            <SpinnerDotted className='spinner' color="#7161EF" />
           </div>
         ) : (
           <>
