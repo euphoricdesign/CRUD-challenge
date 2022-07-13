@@ -13,3 +13,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app)
+
+// initializeApp() creates and initializes a Firebase app instance.
+// Parameters: 
+// options: Object. Options to configure the app's services.
+// name: string. Optional name of the app to initialize. If no name is provided, the default is "[DEFAULT]".
+// Returns the initialized app.
+
+// getFirestore() initializes Cloud Firestore and get a reference to the service

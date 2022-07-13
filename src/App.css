@@ -7,7 +7,7 @@ html {
   font-family: 'Lato', sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
 }
 
@@ -15,6 +15,7 @@ html {
   overflow: auto;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  margin-top: 100px;
 }
 
 button:active { outline: none; border: none; }

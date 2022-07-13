@@ -1,5 +1,4 @@
 import './App.css';
-import { Button, Stack } from '@chakra-ui/react';
 
 // importamos componentes 
 import Table from './components/Table/Table';
@@ -7,16 +6,22 @@ import Create from './components/Create/Create';
 import Edit from './components/Edit/Edit';
 
 // importamos el router 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
+  const location = useLocation()
+
   return (
       <div className="App">
-        <Routes>
-          <Route path='/' element={ <Table /> } />
-          <Route path='/create' element={ <Create /> } />
-          <Route path='/edit/:id' element={ <Edit /> } />
-        </Routes>
+        <AnimatePresence exitBeforeEnter>
+          <Routes location={location} key={location.key}>
+            <Route path='/' element={ <Table /> } />
+            <Route path='/create' element={ <Create /> } />
+            <Route path='/edit/:id' element={ <Edit /> } />
+          </Routes>
+        </AnimatePresence>
       </div>
   );
 }

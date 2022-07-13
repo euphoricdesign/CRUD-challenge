@@ -1,15 +1,36 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {collection, getDocs, getDoc, deleteDoc, doc} from 'firebase/firestore';
+
+import {collection, getDocs, deleteDoc, doc} from 'firebase/firestore';
 import {db} from '../../firebaseConfig/firebase';
+
 import { Button, Stack } from '@chakra-ui/react'
 import './Table.css'
+
 import { SpinnerDotted } from 'spinners-react';
+
+import { motion } from 'framer-motion';
 
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
 const MySwal = withReactContent(Swal);
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+  },
+  exit: {
+    y: '-100vh',
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.5,
+    },
+  },
+};
 
 const Table = () => {
   // 1. configuramos los hooks 
@@ -66,7 +87,12 @@ const Table = () => {
   // 7. Retornamos vista de nuestro componente 
 
   return (
-    <div>
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       {
         loading ? (
           <div className="loader">
@@ -139,7 +165,7 @@ const Table = () => {
           </>
         )
       }
-    </div>
+    </motion.div>
   )
 }
 
